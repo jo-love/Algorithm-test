@@ -1,11 +1,19 @@
 let fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './B2789.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
-console.log(input);
-let cards = input[1].split(' ').map((e) => +e);
-let M = input[0].split(' ').map((e) => +e)[1];
-console.log('cards:',cards);
-console.log(M, 'm');
+// let cards = input[1].split(' ').map((e) => +e);
+// let M = input[0].split(' ').map((e) => +e)[1];
+// console.log('cards:', cards);
+// console.log(M, 'm');
+const inputTestCase = [];
+
+for (let i = 0; i < input.length; i++) {
+  const arr = input[i].split(' ').map((el) => +el);
+  console.log(arr, 'arr');
+  //   const newArr = [];
+  //   if (i % 2 !== 0) newArr.push(input[i]);
+  //   newArr.map((el) => +el);
+}
 
 const makeBlackjack = (arr, M) => {
   const selectNum = 3;
@@ -25,7 +33,7 @@ const makeBlackjack = (arr, M) => {
       result.push(...attached);
     });
     return result;
-  };
+  }
 
   const totalArr = getPermutations(arr, selectNum);
   totalArr.forEach((numArr) => {
@@ -35,11 +43,23 @@ const makeBlackjack = (arr, M) => {
   const filtered = sumArr.filter((num) => num <= M);
   max = Math.max(...filtered);
   console.log(max);
+  0
   return max;
 };
-makeBlackjack(cards, M);
+// makeBlackjack(cards, M);
 
 // ex) [5,6,7,8,9] (1) 5개 중에 3개뽑기 - [5,6,7],[5,6,8]...
 // (2) 순열 배열 요소 다 더하기 - 5+6+7 = 18, 5+6+8 = 19,...7+8+9 = 24
 // (3) M(21)보다 작은 수 추려내기 - 18 <=21, 19 <=21, 24 no!
 // (4) 추려낸 값 중에 제일 큰 값 return
+
+testCase = [
+  {
+    M: 21,
+    cards: [5, 6, 7, 8, 9],
+  },
+  {
+    M: 500,
+    cards: [93, 181, 245, 214, 315, 36, 185, 138, 216, 295],
+  },
+];
