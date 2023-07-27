@@ -8,7 +8,7 @@ function solution(arr1, arr2) {
 
   // 배열을 다 돌기 전까지 while문 돌기
   while (p1 < n && p2 < m) {
-    // p1이 작으면 빈배열에 push후, p1++(증가));
+    // p1이 작으면 빈배열에 push후, p1++(증가);
     if (arr1[p1] <= arr2[p2]) answer.push(arr1[p1++]);
     else answer.push(arr2[p2++]);
   }
@@ -16,7 +16,6 @@ function solution(arr1, arr2) {
   // p1의  배열(arr1)이 남은 경우
   while (p1 < n) answer.push(arr1[p1++]);
   while (p2 < m) answer.push(arr2[p2++]);
-  console.log(answer, "answer");
   return answer;
 }
 
