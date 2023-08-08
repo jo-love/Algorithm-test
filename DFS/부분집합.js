@@ -11,9 +11,11 @@ function solution(n) {
       }
       if (tmp.length > 0) answer.push(tmp.trim());
     } else {
+      // v가 있는 경우
       check[v] = 1;
       DFS(v + 1);
       check[v] = 0;
+      // v가 없는 경우
       DFS(v + 1);
     }
   }
