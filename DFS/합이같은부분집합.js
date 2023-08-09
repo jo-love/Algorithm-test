@@ -15,10 +15,13 @@ function solution(arr) {
         flag = 1;
       }
     } else {
+      // 요소를 더한 경우
       DFS(L + 1, sum + arr[L]);
+      //요소를 뺀 경우
       DFS(L + 1, sum);
     }
   }
+  // 인덱스, 합
   DFS(0, 0);
   return answer;
 }
