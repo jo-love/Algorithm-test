@@ -22,7 +22,6 @@ function solution2(n, r) {
   let answer;
   // (n,r)의 값을 저장할 이차원 배열 필요 ex)[5][3]  범위가 n(3<=n<=33) 이니까 넉넉하게 35로 설정
   const dy = Array.from(Array(35), () => Array(35).fill(0));
-  console.log(dy);
   function DFS(n, r) {
     // 값이 저장되었으면
     if (dy[n][r] > 0) return dy[n][r];
