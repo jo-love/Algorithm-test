@@ -10,6 +10,7 @@ function solution(n, m) {
         tmp[L] = i;
         // 기존 순열처럼 두번째 인자에 +1을 하면, 중복 경우의 수가 나옴 (2,2)
         DFS(L + 1, i + 1);
+        console.log(s, i);
       }
     }
   }
