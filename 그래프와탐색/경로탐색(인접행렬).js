@@ -9,7 +9,6 @@ function solution(n, arr) {
   for (let [a, b] of arr) {
     graph[a][b] = 1;
   }
-  console.log("gra", graph);
   function DFS(v) {
     if (v === n) {
       console.log(path);
@@ -19,7 +18,6 @@ function solution(n, arr) {
         // v라는 정점에서 i라는 정점으로 갈 수 있냐 판단
         // [1][1]은 graph에 0이기 때문에 i는 2로 넘어간다
         if (graph[v][i] === 1 && visited[i] === 0) {
-          console.log("v", "i", v, i, graph[v][i]);
           visited[i] = 1; // 방문할 i정점 체크하고,
           path.push(i);
           DFS(i); // i정점으로 넘어간다
